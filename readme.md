@@ -101,6 +101,27 @@ Telemetry::report()
                 ->init();
 ```
 
+### # Customize the Opt-In Admin Notice
+
+**⚡️ Filter Hooks to Alter the Notice Heading and Description :**
+
+Both accept HTML, so links can be included.
+
+| Filter | Value |
+| --- | --- |
+| `$plugin_prefix . 'telemetry_notice_heading'` | Heading, default `We hope you love {title}.` |
+| `$plugin_prefix . 'telemetry_notice_description'` | Description paragraph |
+
+```php
+add_filter($plugin_prefix . 'telemetry_notice_heading', function ($heading) {
+  return 'Help us make My Plugin better';
+});
+
+add_filter($plugin_prefix . 'telemetry_notice_description', function ($description) {
+  return 'Share non-sensitive diagnostic data and usage info - <a href="https://example.com/what-we-collect/" target="_blank">what we collect</a>';
+});
+```
+
 ### # Deactivation Feedback Survey
 
 **⚡️ Filter Hook to Add Deactivate Reasons :**
