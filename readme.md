@@ -27,6 +27,7 @@ function initialize_telemetry_client()
   TelemetryConfig::setServerBaseUrl( 'https://api.example.com/' );
   TelemetryConfig::setTermsUrl( 'https://example.com/terms/' ); // (optional)
   TelemetryConfig::setPolicyUrl( 'https://example.com/privacy/' ); // (optional)
+  TelemetryConfig::setShowAdminNotice( false ); // (optional) hide the opt-in admin notice, default true
 
   Telemetry::report()->init(); // initialize telemetry tracking
   Telemetry::feedback()->init(); // initialize deactivation feedback survey

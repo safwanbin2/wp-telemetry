@@ -27,7 +27,7 @@ class Report
 
     public function initCommonHooks()
     {
-        if (!$this->isTrackingNoticeDismissed()) {
+        if (TelemetryConfig::getShowAdminNotice() && !$this->isTrackingNoticeDismissed()) {
             add_action('admin_notices', [$this, 'adminNotice']);
         }
 
